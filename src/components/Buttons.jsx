@@ -1,6 +1,8 @@
+// STYLED COMPONENTS
+
 import { styled } from 'styled-components';
 
-export const Button = styled.button`
+export const CustomButton = styled.button`
   padding: 1rem 2rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -24,4 +26,4 @@ export const TextButton = styled.button`
   }
 `
 
-export default { Button, TextButton };
+export default { CustomButton, TextButton };

@@ -1,15 +1,18 @@
 import { useState } from 'react';
-import { styled } from 'styled-components';
+// import { styled } from 'styled-components';
 
-import { Button, TextButton } from './Buttons.jsx';
+import { CustomButton, TextButton } from './Buttons.jsx';
+import Button from './Button.jsx';
 import Input from './Input.jsx';
 
-const ControlContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`
+
+// STYLED COMPONENTS (DON'T FORGET THE DIV NEEDS TO BE CALLED 'ControlContainer' TO USE)
+// const ControlContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 0.5rem;
+//   margin-bottom: 1.5rem;
+// `
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -33,20 +36,24 @@ export default function AuthInputs() {
 
   return (
     <div id="auth-inputs">
-      <ControlContainer>
+      {/* MAKE SURE TO CHANGE BETWEEN 'ControlContainer' AND 'div' for Tailwind and Style-Components */}
+      {/* <ControlContainer> */}
+      <div>
           <Input
             label="Email"
             type="email"
             invalid={emailNotValid}
             onChange={(event) => handleInputChange('email', event.target.value)}
-          />
+            />
           <Input
             label="Password"
             type="password"
             invalid={passwordNotValid}
             onChange={(event) => handleInputChange('password', event.target.value)}
-          />
-      </ControlContainer>
+            />
+      {/* MAKE SURE TO CHANGE BETWEEN 'ControlContainer' AND 'div' for Tailwind and Style-Components */}
+      {/* </ControlContainer> */}
+      </div>
       <div className="actions">
         <TextButton type="button">
           Create a new account
